@@ -1,3 +1,5 @@
+<% if current_user %>
+
 <p id="notice"><%= notice %></p>
 
 <h1>Listing Wikis</h1>
@@ -31,3 +33,9 @@
 <br>
 
 <%= link_to 'New Wiki', new_wiki_path %>
+
+<% else %>  
+  <p> All users must be signed in! </P>
+   <%= link_to "Sign In", new_user_session_path %> or 
+   <%= link_to "Sign Up", new_user_registration_path %>
+<% end %>

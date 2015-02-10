@@ -30,6 +30,7 @@ class WikisController < ApplicationController
       if @wiki.save
         format.html { redirect_to @wiki, notice: 'Wiki was successfully created.' }
         format.json { render :show, status: :created, location: @wiki }
+        
       else
         format.html { render :new }
         format.json { render json: @wiki.errors, status: :unprocessable_entity }
