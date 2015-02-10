@@ -4,31 +4,31 @@ require 'faker'
 admin = User.new(
   name:     'Admin User',
   email:    'admin@example.com',
-  password: 'helloworld'
-  # role:     'admin'
+  password: 'helloworld',
+  role:     'admin'
 )
 admin.skip_confirmation!
 admin.save!
 
 # Create test member user
-moderator = User.new(
+premium = User.new(
   name:     'Premium User',
   email:    'premium@example.com',
-  password: 'helloworld'
-  # role:     'premium'
+  password: 'helloworld',
+  role:     'premium'
 )
-moderator.skip_confirmation!
-moderator.save!
+premium.skip_confirmation!
+premium.save!
 
 # Create test member user
-member = User.new(
+standard = User.new(
   name:     'Standard User',
   email:    'standard@example.com',
-  password: 'helloworld'
-  # role:     'standard'
+  password: 'helloworld',
+  role:     'standard'
 )
-member.skip_confirmation!
-member.save!
+standard.skip_confirmation!
+standard.save!
 
 
 # Create users
@@ -36,8 +36,8 @@ member.save!
   user = User.new(
   name:     Faker::Name.name,
   email:    Faker::Internet.email,
-  password: Faker::Lorem.characters(10)
-  # role:     'standard'
+  password: Faker::Lorem.characters(10),
+  role:     'standard'
   )
   user.skip_confirmation!
   user.save!
@@ -49,6 +49,7 @@ users = User.all
 # Create Wikis
   30.times do
     Wiki.create!(
+    private: 'false',  
     title: Faker::Company.bs,
     body: Faker::Company.bs 
   )
