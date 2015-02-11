@@ -32,32 +32,35 @@ standard.save!
 
 
 # Create users
-3.times do
-  user = User.new(
-  name:     Faker::Name.name,
-  email:    Faker::Internet.email,
-  password: Faker::Lorem.characters(10),
-  role:     'standard'
-  )
-  user.skip_confirmation!
-  user.save!
-end
+# 3.times do
+#   user = User.new(
+#   name:     Faker::Name.name,
+#   email:    Faker::Internet.email,
+#   password: Faker::Lorem.characters(10),
+#   role:     'standard'
+#   )
+#   user.skip_confirmation!
+#   user.save!
+# end
 
 users = User.all
 
 
-# Create Wikis
-  30.times do
-    Wiki.create!(
-    private: 'false',  
-    title: Faker::Company.bs,
-    body: Faker::Company.bs 
-  )
-end
+# # Create Wikis
+# users.each do |user|
+#   10.times do
+#     Wiki.create!(
+#     private:  'false',
+#     user_id: Faker::Number.number(1),  
+#     title: Faker::Company.bs,
+#     body: Faker::Company.bs 
+#   )
+#   end
+# end
 
-Wikis = Wiki.all
+# Wikis = Wiki.all
 
 puts "Seed finished"
 puts "#{User.count} users created"
-puts "#{Wiki.count} lists created"
-# puts "#{.count} items created"
+# puts "#{Wiki.count} lists created"
+# # puts "#{.count} items created"

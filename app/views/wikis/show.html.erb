@@ -15,10 +15,6 @@
   <%= @wiki.private %>
 </p>
 
-<p>
-  <strong>User:</strong>
-  <%= @wiki.user %>
-</p>
 
 <% if policy(@wiki).edit? %>
 <%= link_to 'Edit', edit_wiki_path(@wiki) %> |

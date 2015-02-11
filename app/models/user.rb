@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
     self.role ||= 'standard'
   end
 
-  def standard
+  def standard?
     role == 'standard'
   end 
 
@@ -23,5 +23,10 @@ class User < ActiveRecord::Base
   def admin?
     role == 'admin'
   end
+
+   def upgradeable?
+    standard?
+  end
+
   
 end

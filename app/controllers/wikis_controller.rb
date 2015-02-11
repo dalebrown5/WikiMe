@@ -4,7 +4,7 @@ class WikisController < ApplicationController
   # GET /wikis
   # GET /wikis.json
   def index
-    @wikis = Wiki.all
+    @wikis = policy_scope(Wiki)
     # authorize @wiki
   end
 
@@ -27,12 +27,12 @@ class WikisController < ApplicationController
   # POST /wikis
   # POST /wikis.json
   def create
-    @wiki = Wiki.new(wiki_params)
+    @wiki = current_user.wikis.build(wiki_params)
     authorize @wiki
 
     respond_to do |format|
       if @wiki.save
-        format.html { redirect_to @wiki, notice: 'Wiki was successfully created.' }
+        format.html { redirect_to wikis_path, notice: 'Wiki was successfully created.' }
         format.json { render :show, status: :created, location: @wiki }
         
       else

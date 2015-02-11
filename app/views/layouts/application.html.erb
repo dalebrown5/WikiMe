@@ -20,7 +20,7 @@
            <% if current_user %>
              Welcome <%= current_user.email %>
              <br>
-             <%= current_user.role.upcase %> account user!
+             <%= current_user.role.upcase %> Account!
              <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
            <% else %>
              <%= link_to "Sign In", new_user_session_path %> or 
@@ -28,7 +28,8 @@
            <% end %>
          </div>
   </ul>
-
+    <div>
+  </div>
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
 
