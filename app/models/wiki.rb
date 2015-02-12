@@ -6,8 +6,5 @@ class Wiki < ActiveRecord::Base
   scope :public_wikis, -> { where(private: false) }
   scope :user_wikis, -> (user) { user ? where(user_id: user.id) : []}
 
-  def default
-    public = false
-  end
 
 end

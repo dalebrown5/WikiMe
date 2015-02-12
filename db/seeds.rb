@@ -46,21 +46,21 @@ standard.save!
 users = User.all
 
 
-# # Create Wikis
-# users.each do |user|
-#   10.times do
-#     Wiki.create!(
-#     private:  'false',
-#     user_id: Faker::Number.number(1),  
-#     title: Faker::Company.bs,
-#     body: Faker::Company.bs 
-#   )
-#   end
-# end
+# Create Wikis
+users.each do |user|
+  5.times do
+    Wiki.create!(
+    private:  'false',
+    user: user,  
+    title: Faker::Company.bs,
+    body: Faker::Company.bs 
+  )
+  end
+end
 
-# Wikis = Wiki.all
+Wikis = Wiki.all
 
 puts "Seed finished"
 puts "#{User.count} users created"
-# puts "#{Wiki.count} lists created"
+puts "#{Wiki.count} lists created"
 # # puts "#{.count} items created"
