@@ -24,11 +24,13 @@
     <br>
     </div>
   <div class = "container text-center">  
+    <% if current_user.admin? || current_user.premium? %>
   <div class="form-group">
     <%= f.label :private, class: 'checkbox' do %>
     <%= f.check_box :private %> Wicki is Private
     <% end %>
   </div>
+    <% end %>
   <br>
   <div class="actions">
     <%= f.submit %>

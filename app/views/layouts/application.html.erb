@@ -2,8 +2,8 @@
 <html>
 <head>
   <title>WickiMe</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -12,10 +12,11 @@
         <li><%= link_to "Home", root_path %></li>
         <li><%= link_to "About", about_path %></li>
         <% if current_user %>
-        <li><%= link_to "Wiki's", wikis_path %></li>
+        <li><%= link_to "Wiki's", wikis_path %></li>        
+          <% if current_user.standard?  %>
+            <li><%= link_to "Upgrade to Premium", new_charge_path %></li>
+          <% end %>
         <% end %>
-        <li><%= link_to "Upgrade to Premium", new_charge_path %></li>
-        
         <div class="pull-right user-info">
            <% if current_user %>
              Welcome <%= current_user.email %> |

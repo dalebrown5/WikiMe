@@ -4,12 +4,11 @@
     <br>
     <div class="jumbotron text-center">
       <br>
-      <p><strong>Title:</strong>
-        <%= @wiki.title %></p>
+      <p><strong>Title</strong>
+        <%= markdown_to_html @wiki.title %></p>
         <br>
-      <p><strong>Body:</strong>
-        <%= @wiki.body %></p>
-
+      <p><strong>Body</strong>
+        <%= markdown_to_html @wiki.body %></p>
       </div>
   </div>
 <br>

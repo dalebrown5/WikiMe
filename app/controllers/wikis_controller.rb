@@ -2,8 +2,8 @@ class WikisController < ApplicationController
   before_action :set_wiki, only: [:show, :edit, :update, :destroy]
 
   def index
-    @wikis = Wiki.all
-    # @wikis = policy_scope(Wiki)
+    #@wikis = Wiki.all
+    @wikis = policy_scope(Wiki)
   end
   
   def show
@@ -20,6 +20,7 @@ class WikisController < ApplicationController
 
   def create
     @wiki = current_user.wikis.build(wiki_params)
+    @wiki.private ||= false
     authorize @wiki
 
     respond_to do |format|
