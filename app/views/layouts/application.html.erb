@@ -18,21 +18,23 @@
         
         <div class="pull-right user-info">
            <% if current_user %>
-             Welcome <%= current_user.email %>
-             <br>
-             <%= current_user.role.upcase %> Account!
+             Welcome <%= current_user.email %> |
+             <%= current_user.role.upcase %> Account |
              <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
            <% else %>
              <%= link_to "Log In", new_user_session_path %> or 
              <%= link_to "Sign Up", new_user_registration_path %>
            <% end %>
          </div>
-  </ul>
+      </ul>
     <div>
   </div>
-   <p class="notice"><%= notice %></p> 
-   <p class="alert"><%= alert %></p>  
-  <%= yield %>
+  
+      <p class="notice"><%= notice %></p> 
+      <p class="alert"><%= alert %></p> 
+
+<%= yield %>
+
   </div>
 
  </body>
