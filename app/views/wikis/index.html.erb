@@ -1,14 +1,16 @@
 <% if current_user %>
 
-<h1>Wicki List</h1>
-
-<table>
+<div class = "container text-center">
+    <h1>Wicki List</h1>
+</div>
+  <br>
+<table class="table table-striped">
   <thead>
     <tr>
       <th>Title</th>
-      <th>Body</th>
-      <th>Private</th>
-      <th>User</th>
+      <th>Content</th>
+      <th>Private?</th>
+      <th>Wiki Creator</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -20,19 +22,17 @@
         <td><%= wiki.body %></td>
         <td><%= wiki.private %></td>
         <td><%= wiki.user.email %></td>
-        <td><%= link_to 'Show', wiki %></td>
-        <td><%= link_to 'Edit', edit_wiki_path(wiki) %></td>
-        <td><%= link_to 'Destroy', wiki, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'View', wiki %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
+<p><%= link_to "Create New", new_wiki_path, class: 'btn btn-primary btn-lg' %></p>
 
-<%= link_to 'New Wiki', new_wiki_path %>
+<% else %> 
 
-<% else %>  
   <p> All users must be signed in! </P>
    <%= link_to "Sign In", new_user_session_path %> or 
    <%= link_to "Sign Up", new_user_registration_path %>

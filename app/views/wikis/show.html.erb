@@ -1,22 +1,21 @@
 <p id="notice"><%= notice %></p>
+<div class = "container text-center">
+  <h1>Wiki Viewer</h1>
+    <br>
+    <div class="jumbotron text-center">
+      <br>
+      <p><strong>Title:</strong>
+        <%= @wiki.title %></p>
+        <br>
+      <p><strong>Body:</strong>
+        <%= @wiki.body %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @wiki.title %>
-</p>
-
-<p>
-  <strong>Body:</strong>
-  <%= @wiki.body %>
-</p>
-
-<p>
-  <strong>Private:</strong>
-  <%= @wiki.private %>
-</p>
-
-
-<% if policy(@wiki).edit? %>
-<%= link_to 'Edit', edit_wiki_path(@wiki) %> |
-<% end %>
-<%= link_to 'Back', wikis_path %>
+      </div>
+  </div>
+<br>
+<div class = "container text-center">
+  <% if policy(@wiki).edit? %>
+    <%= link_to 'Edit', edit_wiki_path(@wiki) %> |
+      <% end %>
+    <%= link_to 'Back to List', wikis_path %>
+</div>

@@ -2,7 +2,6 @@
   <% if @wiki.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@wiki.errors.count, "error") %> prohibited this wiki from being saved:</h2>
-
       <ul>
       <% @wiki.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -10,27 +9,32 @@
       </ul>
     </div>
   <% end %>
-
+<div class="jumbotron">
+<div class = "container">
   <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
+    <p><%= f.label :title %><br>
+    <%= f.text_field :title, class: 'form-control', placeholder: "Wiki Title"%></p>
   </div>
-
-  <div class="field">
-    <%= f.label :body %><br>
-    <%= f.text_area :body %>
+    <br>
+    <br>
+  <div class="form-group">
+    <p><%= f.label :body %><br>
+    <%= f.text_area :body, rows: 7, class: 'form-control', placeholder: "Wiki Content" %></p>
   </div>
-
-
+    <br>
+    </div>
+  <div class = "container text-center">  
   <div class="form-group">
     <%= f.label :private, class: 'checkbox' do %>
-    <%= f.check_box :private %> Private wiki
+    <%= f.check_box :private %> Wicki is Private
     <% end %>
   </div>
-
-
+  <br>
   <div class="actions">
     <%= f.submit %>
-    <% wikis_path %>
   </div>
+  </div>
+  </div>
+</div>
+  
 <% end %>

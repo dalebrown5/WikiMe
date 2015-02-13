@@ -1,6 +1,15 @@
-<h1>Editing Wiki</h1>
 
-<%= render 'form' %>
+<div class = "container text-center">
+  <h1>Wiki Editor</h1>
+    <br>
+  <div class="jumbotron text-center">
+        <%= render 'form' %>
+    </div>
+  </div>
+<br>
+<div class = "container text-center">
+  <%= link_to 'Show', @wiki %> |
+    <%= link_to 'Delete', @wiki, method: :delete, data: { confirm: 'Are you sure?' } %> |
+  <%= link_to 'Back to List', wikis_path %>
+</div>
 
-<%= link_to 'Show', @wiki %> |
-<%= link_to 'Back', wikis_path %>

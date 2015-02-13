@@ -24,8 +24,8 @@ class User < ActiveRecord::Base
     role == 'admin'
   end
 
-   def upgradeable?
-    standard?
+   def upgradeable
+    @upgradeable = user.role(standard)
   end
 
   

@@ -19,9 +19,9 @@ class ChargesController < ApplicationController
       flash[:success] = "#{current_user.email}! Premium member status set."
       redirect_to user_path(current_user) # or wherever
      
-      rescue Stripe::CardError => e
-        flash[:error] = e.message
-        redirect_to new_charge_path
+      # rescue Stripe::CardError => e
+      #   flash[:error] = e.message
+      #   redirect_to new_charge_path
       
     else
       flash[:error] = "Already a premium account"

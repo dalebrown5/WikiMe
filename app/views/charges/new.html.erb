@@ -1,4 +1,17 @@
-<%= form_tag charges_path do %>
-   <h4>Upgrade to Premium!</h4>
+<div class = "container">
+  <div class="jumbotron text-center">
+  <%= form_tag charges_path do %>
+   <h2>Upgrade to Premium User</h2>
+   <br>
    <script class='stripe-button' src="https://checkout.stripe.com/checkout.js" data-key="<%= @stripe_btn_data[:key] %>" data-amount=<%= @stripe_btn_data[:amount] %> data-description=="<%= @stripe_btn_data[:description] %>" ></script>
  <% end %>
+  <br>
+  <h5> Premium Membership one time fee of $15 </h5>
+</div>
+<div class = "container">
+  <div class="col-md-12">
+    <h3>Premium Membership</h3>
+    <p>The Premium Membership allows all the features of a Standard Membership, plus; you have the ability to create private wickis and choose who can collaborate on your wickis.  Premium member ship is a onetime fee of $15.</p>
+  </div>
+  </div>
+</div>
