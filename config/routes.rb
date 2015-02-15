@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   resources :charges, only: [:new, :create]
 
   get 'about' => 'welcome#about'
-  get 'charges' => 'charges#new'
 
   root to: 'welcome#index'
   
