@@ -27,13 +27,15 @@
     <% if current_user.admin? || current_user.premium? %>
   <div class="form-group">
     <%= f.label :private, class: 'checkbox' do %>
-    <%= f.check_box :private %> Wicki is Private
+    <%= f.check_box :private %> Wiki is Private
+    <p>
+      <%= link_to "Choose Collaborators", wiki_collaborators_path(@wiki), class: 'btn btn-success bump-down' %>
+    </p>
     <% end %>
   </div>
     <% end %>
-  <br>
-  <div class="actions">
-    <%= f.submit %>
+    <div class="actions">
+    <%= f.submit "Save", class: 'btn btn-success'%>
   </div>
   </div>
   </div>
