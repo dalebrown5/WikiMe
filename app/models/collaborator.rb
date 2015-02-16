@@ -1,17 +1,4 @@
 class Collaborator < ActiveRecord::Base
-<<<<<<< HEAD
-
-  belongs_to :wiki
-  belongs_to :user
-
-  def choices
-    Choice.where(collaborator_id: id)
-  end
-
-  def wikis
-    Wiki.where(id: choices.pluck(:wiki_id) )
-  end
-=======
   
   belongs_to :wiki
   belongs_to :user
@@ -31,6 +18,5 @@ class Collaborator < ActiveRecord::Base
   # def wiki
   #   Wiki.find(wiki_id)
   # end
->>>>>>> collaborators
 
 end
