@@ -38,7 +38,7 @@ class WikisController < ApplicationController
     authorize @wiki
     respond_to do |format|
       if @wiki.update(wiki_params)
-        format.html { redirect_to wikis_url, notice: 'Wiki was successfully updated.' }
+        format.html { redirect_to :back, notice: 'Wiki was successfully updated.' }
         format.json { render :show, status: :ok, location: @wiki }
       else
         format.html { render :edit }
