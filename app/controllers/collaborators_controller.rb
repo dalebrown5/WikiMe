@@ -3,7 +3,6 @@ class CollaboratorsController < ApplicationController
 
   def index
     @users = User.all
-    @users.delete(current_user)
   end
 
   # def update
