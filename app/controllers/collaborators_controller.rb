@@ -2,7 +2,7 @@ class CollaboratorsController < ApplicationController
   before_action :set_wiki
 
   def index
-    @users = User.all
+    @users = User.all.select {|user| user != current_user }
   end
 
   # def update
